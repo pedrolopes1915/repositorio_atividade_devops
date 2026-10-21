@@ -1,0 +1,16 @@
+name: Ping Google
+
+on:
+  # Permite rodar o script manualmente pelo GitHub
+  workflow_dispatch:
+  # Executa automaticamente a cada 1 hora (opcional)
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Executar Ping no Google
+        run: ping -c 4 google.com
